@@ -8,6 +8,7 @@ app = (()=>{
 	};
 	return {init:init};
 })();
+
 var createNavgation=x=>{
 	return+'<div class="btn-group">'
 	  +'<button type="button" class="btn btn-danger">Action</button>'
@@ -176,17 +177,7 @@ app.main=(()=>{
 	     setContentView();
 	 };
 	 var setContentView=()=>{
-			 $.getScript(view,()=>{
-				 $(createDiv({
-	    			 id : 'j-div-nav',
-	    			 clazz : ''
-	    		 })).appendTo($wrapper);
-				 $(createDiv({
-	    			 id : 'j-div-header',
-	    			 clazz : 'wrap-tnb-menu'
-	    		 })).attr('style','background:black; height:60px;')
-	    		 .appendTo('#j-div-nav');
-				 
+			 $.getScript(view,()=>{ 
 				 $(createDiv({
 	    			 id : 'div-main',
 	    			 clazz : ''
@@ -612,7 +603,7 @@ app.main=(()=>{
 				})).attr('style','background:black; height:15%;')
 				.appendTo('#footer');
 				$(createImg({
-					img:'mainitme10.jpg'
+					img:'mainitem10.jpg'
 				})).appendTo('#j-div-footer2');
 				
 				$(createGridDiv4()).attr('style','margin: 0 auto;').appendTo('#j-div-footer1');
@@ -777,7 +768,7 @@ app.login=(()=>{
 		 $content = $('#content');
 		 context = $.context();
 		 image = $.image();
-	     view = $.javascript()+'/view.js';
+	     view = $.javascript()+'/app.js';
 	     setContentView();
 	     content();
 	 };
@@ -957,6 +948,7 @@ app.login=(()=>{
    		 })).attr('style','color:white;font-size: 20px; padding:10px;')
    		 .appendTo('#div-second');
          });
+		 //*** 관리자 클릭시 admin폴더의 b_home으로 이동하게!
 		 
 	 };
 	 var order=x=>{
