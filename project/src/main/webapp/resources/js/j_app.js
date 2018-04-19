@@ -204,7 +204,8 @@ app.mainItems=(()=>{
 			 alert('메인아이템스')
 		 });
 	 }
-})
+	 return{mainNavItems:mainNavItems}
+});
 
 
 app.main=(()=>{
@@ -274,7 +275,7 @@ app.main=(()=>{
 													 .append($(createATag({id:'a-tranding-now', val:'트랜딩 나우'}))
 															 .on('click',(e)=>{
 																 e.preventDefault();
-																 
+																
 																 alert('작동');
 															 }))
 											 )
