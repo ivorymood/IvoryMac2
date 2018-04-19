@@ -16,7 +16,7 @@
     <script src="${context}/resources/js/app.js"></script>
 </head>
 <body>
-<div id="wrapper">	
+<div id="wrapper">	//
 </div>
 <div id="content">	
 </div>
