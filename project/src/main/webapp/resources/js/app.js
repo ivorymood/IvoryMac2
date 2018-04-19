@@ -189,6 +189,10 @@ app.main=(()=>{
 					 id:'container',
 					 clazz:'container'
 				 })));
+				 $(createDiv({
+					 id:'j-nav-dropdown1',
+					 clazz:'dropdown'
+				 })).appendTo('#container');
 				 $(createButton({
 					 id:'j-btn-nav-new-item',
 					 clazz:' btn-primary dropdown-toggle',
@@ -196,36 +200,59 @@ app.main=(()=>{
 						 id:'j-span-new-item',
 						 clazz:'caret'
 					 }))
-				 })).attr('data-toggle','dropdown-menu')
-				 .appendTo('#container');
+				 })).attr('data-toggle','dropdown')
+				 .appendTo('#j-nav-dropdown1');
 				 $(createUL({
 					 id:'j-ul-new-item',
-					 clazz:'dropdown'
-				 })).appendTo('#container');
-				 $(createLI({
-					 id:'j-li-1',
-					 clazz:'',
-					 val:(createATag({
-						 id:'',
-						 val:'HTML'
-					 }))
+					 clazz:'dropdown-menu'
+				 })).attr('style','width: 100%;').appendTo('#j-nav-dropdown1');
+				 
+				 $(createDiv({
+					 id:'j-div-item-1',
+					 clazz:''
 				 })).appendTo('#j-ul-new-item');
 				 $(createLI({
-					 id:'j-li-2',
+					 id:'j-li-item-1',
 					 clazz:'',
 					 val:(createATag({
-						 id:'',
-						 val:'HTML'
+						 id:'j-a-item-1',
+						 val:'버시컬러 바니쉬'
 					 }))
-				 })).appendTo('#j-ul-new-item');
+				 })).attr('style','padding:10px; ')
+				 .appendTo('#j-div-item-1');				 
 				 $(createLI({
-					 id:'j-li-3',
+					 id:'j-li-item-2',
 					 clazz:'',
 					 val:(createATag({
-						 id:'',
-						 val:'HTML'
+						 id:'j-a-item-2',
+						 val:'맥 걸즈'
 					 }))
-				 })).appendTo('#j-ul-new-item');
+				 })).attr('style','padding:10px;').appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-item-3',
+					 clazz:'',
+					 val:(createATag({
+						 id:'j-a-item-3',
+						 val:'스로우 백스:립아이'
+					 }))
+				 })).attr('style','padding:10px;').appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-item-4',
+					 clazz:'',
+					 val:(createATag({
+						 id:'j-a-item-4',
+						 val:'맥 트랜드 포케스트'
+					 }))
+				 })).attr('style','padding:10px;').appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-item-5',
+					 clazz:'',
+					 val:(createATag({
+						 id:'j-a-item-5',
+						 val:'리틀 맥'
+					 }))
+				 })).attr('style','padding:10px;').appendTo('#j-ul-new-item');
+				 
 				 
 				 
 				 $(createDiv({
