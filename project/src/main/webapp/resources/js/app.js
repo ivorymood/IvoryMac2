@@ -1085,33 +1085,20 @@ app.login=(()=>{
    			 val:'관리자'
    		 })).attr('style','color:white;font-size: 20px; padding:10px;')
    		 .appendTo('#div-second')
-			.on('click',e=>{
-				boram(e);
+   		 .on('click',e=>{
+				e.preventDefault();
+				$.ajax({
+				url: context+"/admin/login",
+				dataType: 'text',
+				contentType: 'application/json',
+				method: 'POST',
+				});
+				alert('작동함');
 			});
          });
-		 
 		 //*** 관리자 클릭시 admin폴더의 b_home으로 이동하게!
 		 
 	 };
- var boram = x=>{
-		 alert('1g');
-		 location.href=route.$() + "/admin/login/" + x;
-	 }
-	 $(function(){
-		 $('#a-find-store').on('click', function(){
-			 alert('2s');
-			 location.href="${path.context}/admin/login";
-		 });
-	 })
-	  $(function(){
-		 $('#div-second').on('click', function(){
-			 alert('4n');
-			 location.href="${path.context}/admin/login";
-		 });
-	 })
-	 
-	 
-	 
 	 var order=x=>{
 		 x.preventDefault();
 		alert('알러트 작동');
