@@ -13,7 +13,7 @@
 <%--     <script src="${context}/resources/js/yongho.js"></script> --%>
     <script src="${context}/resources/js/view.js"></script>
     <script src="${context}/resources/js/router.js"></script>
-    <script src="${context}/resources/js/app.js"></script>
+    <script src="${context}/resources/js/j_app.js"></script>
 </head>
 <body>
 <div id="wrapper">	

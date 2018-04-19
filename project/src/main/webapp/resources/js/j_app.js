@@ -186,6 +186,26 @@ var createMainImg=()=>{
     +'</ol>'
 ;
 }
+app.mainItems=(()=>{
+	var $wrapper,context,view,image;
+	var onCreate=()=>{
+		 $wrapper = $('#wrapper');
+		 $content = $('#content');
+		 context = $.context();
+		 image = $.image();
+	     view = $.javascript()+'/j_app.js';
+	     setContentView();
+	 };
+	 var setCotentView=()=>{
+		 mainNavItems();
+	 };
+	 var mainNavItems=()=>{
+		 $.getScript(view,()=>{
+			 alert('메인아이템스')
+		 });
+	 }
+})
+
 
 app.main=(()=>{
 	var $wrapper,context,view,image;
@@ -194,7 +214,7 @@ app.main=(()=>{
 		 $content = $('#content');
 		 context = $.context();
 		 image = $.image();
-	     view = $.javascript()+'/app.js';
+	     view = $.javascript()+'/j_app.js';
 	     setContentView();
 	 };
 	 var setContentView=()=>{
@@ -251,8 +271,12 @@ app.main=(()=>{
 										 .append($(createUL({id:'',clazz:'dropdown-menu'}))
 											 .attr('style','width:100%')
 											 .append($(createLI({id:'', clazz:'', val:''}))
-													 .append($(createATag({id:'', val:'트랜딩 나우'}))
-															 .append())
+													 .append($(createATag({id:'a-tranding-now', val:'트랜딩 나우'}))
+															 .on('click',(e)=>{
+																 e.preventDefault();
+																 
+																 alert('작동');
+															 }))
 											 )
 											 .append($(createLI({id:'', clazz:'', val:''}))
 													 .append($(createATag({id:'', val:'메이크업'})))
@@ -269,11 +293,12 @@ app.main=(()=>{
 											  .append($(createLI({id:'', clazz:'', val:''}))
 													 .append($(createATag({id:'', val:'주요 라인업'})))
 											 )
-												 )
-										 
-								 )
-								 
+												 )		 
+								 )	
+							
 						 )
+					
+						
 						
 				 )
 				 .appendTo($('#div-main-nav'))
@@ -465,7 +490,7 @@ app.main=(()=>{
 	 				app.login.onCreate();
 	 				$('#content').empty();
 	 				$('#wrapper').empty();
-	 			 });;
+	 			 });
 	 			$('#div-second').append('<!-- Trigger the modal with a button -->'
 	    				  +'<a style="height:30px; background:black; color:white; font-size:20px;"  data-toggle="modal" data-target="#myModal">장바구니</a>'
 	    				+''
@@ -979,7 +1004,7 @@ app.login=(()=>{
 		 $content = $('#content');
 		 context = $.context();
 		 image = $.image();
-	     view = $.javascript()+'/app.js';
+	     view = $.javascript()+'/j_app.js';
 	     setContentView();
 	     content();
 	 };
@@ -1172,6 +1197,9 @@ app.login=(()=>{
 		 //*** 관리자 클릭시 admin폴더의 b_home으로 이동하게!
 		 
 	 };
+	 var mainItems=x=>{
+		 alert('알러트 작동');
+	 }
 	 var order=x=>{
 		 x.preventDefault();
 		alert('알러트 작동');
