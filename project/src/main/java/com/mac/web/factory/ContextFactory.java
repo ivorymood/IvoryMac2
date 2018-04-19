@@ -24,10 +24,10 @@ public class ContextFactory {
 	 
 	 public Path ptx() {
 		 logger.info("컨텍스팩토리 ptx(){}", "들어옴");
-		 //path.setContext(path());
-		// path.setCss(path()+"/resources/css");
-		 //path.setImage(path()+"/resources/image");
-		// path.setJs(path()+"/resources/js");
+		 path.setContext(path());
+		 path.setCss(path()+"/resources/css");
+		 path.setImage(path()+"/resources/image");
+		 path.setJs(path()+"/resources/js");
 		 return path;
 	 }
 	 

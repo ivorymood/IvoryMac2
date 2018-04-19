@@ -10,14 +10,10 @@
  		<put-attribute name="content" value="/WEB-INF/views/admin/{1}.jsp"/>
     </definition>
     
-    <definition name="customer" template="/WEB-INF/views/customer/layout.jsp">
-        <put-attribute name="title" value=""/>
-        <put-attribute name="header" value=""/>
-        <put-attribute name="content" value=""/>
-        <put-attribute name="footer" value="/WEB-INF/views/customer/footer.jsp"/>
+    <definition name="login" template="/WEB-INF/views/admin/login_layout.jsp">    
+        <put-attribute name="content" value=""/>  
     </definition>
-    <definition name="*.customer" extends="customer">
-        <put-attribute name="header" value="/WEB-INF/views/customer/header.jsp"/>
-        <put-attribute name="content" value="/WEB-INF/views/customer/{1}.jsp"/>
+    <definition name="*.tiles" extends="login">
+        <put-attribute name="content" value="/WEB-INF/views/admin/{1}.jsp"/>
     </definition>
 </tiles-definitions>

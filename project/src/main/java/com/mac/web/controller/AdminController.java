@@ -18,14 +18,14 @@ public class AdminController {
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	@Autowired Command cmd;
 	@Autowired Customer custom;
-
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String custMana() {
 		logger.info("어드민 컨트롤러 custMana() =============================");
 		custom.setCustomPass("1");
 		int a = 1;
 		if(a==1) {
-			return "custMana.admin";
+			logger.info("어드민 컨트롤러 custMana111111111() =============================");
+			return "login.tiles";
 		}else {
 			return "redirect:/admin";
 		}		

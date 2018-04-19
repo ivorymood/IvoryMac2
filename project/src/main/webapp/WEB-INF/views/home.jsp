@@ -14,10 +14,10 @@
     <script src="${context}/resources/js/router.js"></script>
 </head>
 <body>
-<div id="wrapper">	////////
+<div id="wrapper">	
 </div>
 <div id="content">	
-</div>//
+</div>
 <div id="footer">	
 </div>
 </body>
