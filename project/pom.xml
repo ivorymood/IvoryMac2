@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mac</groupId>
+	<groupId>com.bitcamp</groupId>
 	<artifactId>web</artifactId>
-	<name>Mac</name>
+	<name>Bitcamp</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -24,32 +24,6 @@
         <tiles-version>3.0.7</tiles-version>
 	</properties>
 	<dependencies>
-		<!-- tiles -->
-		<dependency>
-		    <groupId>org.apache.tiles</groupId>
-		    <artifactId>tiles-extras</artifactId>
-		    <version>${tiles-version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tiles</groupId>
-		    <artifactId>tiles-servlet</artifactId>
-		    <version>${tiles-version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tiles</groupId>
-		    <artifactId>tiles-jsp</artifactId>
-		    <version>${tiles-version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tiles</groupId>
-		    <artifactId>tiles-template</artifactId>
-		    <version>${tiles-version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tiles</groupId>
-		    <artifactId>tiles-el</artifactId>
-		    <version>${tiles-version}</version>
-		</dependency>
 		<!-- mysql -->
         <dependency>
             <groupId>mysql</groupId>
@@ -277,12 +251,12 @@
 			<scope>provided</scope>
 		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-	<dependency>
+<dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>javax.servlet-api</artifactId>
     <version>3.1.0</version>
     <scope>provided</scope>
-	</dependency>
+</dependency>
 		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
@@ -295,7 +269,32 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-	
+	<!-- tiles -->
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-extras</artifactId>
+		    <version>${tiles-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-servlet</artifactId>
+		    <version>${tiles-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-jsp</artifactId>
+		    <version>${tiles-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-template</artifactId>
+		    <version>${tiles-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-el</artifactId>
+		    <version>${tiles-version}</version>
+		</dependency>
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -326,9 +325,6 @@
                     <downloadSources>true</downloadSources>
                     <downloadJavadocs>true</downloadJavadocs>
                 </configuration>
-                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
-
-                
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -350,14 +346,6 @@
                     <mainClass>org.test.int1.Main</mainClass>
                 </configuration>
             </plugin>
-            <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.0</version>
-        <configuration>
-          <webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>
-        </configuration>
-      </plugin>
         </plugins>
     </build>
 </project>
