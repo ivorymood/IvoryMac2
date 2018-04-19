@@ -17,7 +17,7 @@
 <div id="wrapper">	
 </div>
 <div id="content">	
-</div>
+</div>//
 <div id="footer">	
 </div>
 </body>
