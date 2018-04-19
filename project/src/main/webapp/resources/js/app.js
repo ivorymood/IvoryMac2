@@ -8,7 +8,7 @@ app = (()=>{
 	};
 	return {init:init};
 })();
-//
+
 var createNavgation=x=>{
 	return+'<div class="btn-group">'
 	  +'<button type="button" class="btn btn-danger">Action</button>'
@@ -35,12 +35,22 @@ var createFont=x=>{
 var createATag=x=>{
     return '<a id="'+x.id+'" href="#">'+x.val+'</a>';
 }
+var createNavATag=x=>{
+    return '<a id="'+x.id+'" class="'+x.clazz+'" href="#">'+x.val+'</a>';
+}
 var createATagGrid=x=>{
     return '<a id="'+x.id+'" href="#">'+x.val+'</a>';
 }
 var createSpan=x=>{
     return '<span id="'+x.id+'" class="glyphicon '+x.clazz+'" aria-hidden="true"> &nbsp;'
     +x.val+'</span>'
+}
+
+var createNav=x=>{
+    return '<nav id="'+x.id+'" class="'+x.clazz+'"></nav>'
+}
+var createNavSpan=x=>{
+    return '<span id="'+x.id+'" class="'+x.clazz+'" aria-hidden="true"></span>'
 }
 var createHTag=x=>{
     return '<h'+x.num+'>'+x.val+'</h'+x.num+'>';
@@ -98,6 +108,14 @@ var createGridDiv3=x=>{
 var createGridDiv4=x=>{
 	return '<div id="div-order-grid4" class="order-grid-container4"></div>';
 }
+var createGridDiv5=x=>{
+	return '<div id="div-order-grid5" class="order-grid-container5">'
+	+'</div>';
+}
+var createGridDiv6=x=>{
+	return '<div id="div-order-grid6" class="order-grid-container6">'
+	+'</div>';
+}
 var createGridDivContent=x=>{
 	return '<div>'+x.val+'</div>';
 }
@@ -142,6 +160,9 @@ var createGridDivRowPrice=x=>{
 var createImg=x=>{
 	return '<img src="'+$.image()+'/'+x.img+'" alt="Matte Lipstick" title="Matte Lipstick">';
 }
+var createNavImg=x=>{
+	return '<img id="'+x.id+'" src="'+$.image()+'/'+x.img+'" alt="Matte Lipstick" title="Matte Lipstick">';
+}
 var createOl=x=>{
 	return '<ol id="'+x.id+'" class="'+x.clazz+'"></ol>'
 }
@@ -177,16 +198,196 @@ app.main=(()=>{
 	     setContentView();
 	 };
 	 var setContentView=()=>{
-			 $.getScript(view,()=>{
+			 $.getScript(view,()=>{ 
 				 $(createDiv({
-	    			 id : 'j-div-nav',
+	    			 id : 'div-main-nav',
 	    			 clazz : ''
-	    		 })).appendTo($wrapper);
+	    		 })).attr('style','width:1584px; height:60px; background: black;')
+	    		 .appendTo($wrapper);
+				 $(createNav({
+					 id:'j-nav-new-item1',
+					 clazz:'navbar navbar-inverse'
+				 }))
+				 .append($(createDiv({id:'', clazz:'container-fluid'}))
+						 .append($(createDiv({id:'', clazz:'navbar-header'}))
+								 .append($(createATag({id:'', val:''})))
+						 )
+						 .append($(createUL({id:'',clazz:'nav navbar-nav'}))
+								 .append($(createLI({id:'',clazz:'',val:''}))
+										 .append($(createATag({id:'', val:'MAC'}))
+												 .attr('style','font-size:30px; padding:15px; color:white;'))
+								 )
+								 .append($(createLI({id:'',clazz:'dropdown',val:''}))
+										 .attr('style','position:static !important')
+										 .append($(createNavATag({id:'', val:'신제품',clazz:'dropdown-toggle'}))
+												 .attr('data-toggle','dropdown')
+												 .attr('style','font-size:30px; padding:15px; color:white;')
+												 )
+									 .append($(createUL({id:'',clazz:'dropdown-menu'}))
+											 .attr('style','width:100%;padding:0px;')
+											 .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createImg({img:'crush.jpg'})))
+											 )
+											 .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createImg({img:'crush2.jpg'})))
+											 )
+											 .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createImg({img:'crush3.jpg'})))
+											 )
+											 .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createImg({img:'crush4.jpg'})))
+											 )
+											 .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createImg({img:'crush5.jpg'})))
+											 )
+									 )										
+								 )
+								 .append($(createLI({id:'',clazz:'dropdown',val:''}))
+										 .attr('style','position:static !important')
+										 .append($(createNavATag({id:'dropdown-toggle',val:'제품',clazz:'dropdown-toggle'}))
+												 .attr('data-toggle','dropdown')
+												 .attr('style','font-size:30px; padding:15px; color:white;')
+										 )
+										 .append($(createUL({id:'',clazz:'dropdown-menu'}))
+											 .attr('style','width:100%')
+											 .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createATag({id:'', val:'트랜딩 나우'}))
+															 .append())
+											 )
+											 .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createATag({id:'', val:'메이크업'})))
+											 )
+											 .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createATag({id:'', val:'프라이머+스킨케어'})))
+											 )
+											  .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createATag({id:'', val:'브러시톨'})))
+											 )
+											  .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createATag({id:'', val:'향수'})))
+											 )
+											  .append($(createLI({id:'', clazz:'', val:''}))
+													 .append($(createATag({id:'', val:'주요 라인업'})))
+											 )
+												 )
+										 
+								 )
+								 
+						 )
+						
+				 )
+				 .appendTo($('#div-main-nav'))
+				 $(createLI({
+					 id:'j-li-item-2',
+					 clazz:'',
+					 val:(createNavImg({
+						 id:'j-img-item-2',
+						 img:'crush.jpg'
+					 }))
+				 })).attr('style','padding:0 ')
+				 .appendTo('#j-ul-new-item2');
+	
 				 $(createDiv({
-	    			 id : 'j-div-header',
-	    			 clazz : 'wrap-tnb-menu'
-	    		 })).attr('style','background:black; height:60px;')
-	    		 .appendTo('#j-div-nav');
+					 id:'j-nav-dropdown1',
+					 clazz:'dropdown '
+				 })).attr('style','display: inline-block; background: black;').appendTo('#container');
+				
+				 
+				 $(createButton({
+					 id:'j-btn-nav-new-item',
+					 clazz:' btn-primary dropdown-toggle',
+					 val:'신제품'+(createNavSpan({
+						 id:'j-span-new-item',
+						 clazz:'caret'
+					 }))
+				 })).attr('data-toggle','dropdown')
+				 .attr('style','border-color: black;font-weight: bold; background: black; font-size: 20px; width: 130px;')
+				 .appendTo('#j-nav-dropdown1');
+				 
+				 $(createUL({
+					 id:'j-ul-new-item',
+					 clazz:'dropdown-menu'
+				 })).attr('style','padding: 0px; text-align: center;').appendTo('#j-nav-dropdown1');
+				 
+				 $(createGridDiv5())
+				 .appendTo('#j-ul-new-item');
+				
+				 $(createLI({
+					 id:'j-li-item-1',
+					 clazz:'',
+					 val:(createNavImg({
+						 id:'j-img-item-1',
+						 img:'crush.jpg'
+					 }))
+				 })).attr('style','padding:0 ')
+				 .appendTo('#div-order-grid5');
+				 $(createATag({
+					 id:'',
+					 val:'구매하러가기'
+				 })).attr('style','color:white').appendTo('#j-li-item-1');
+				 $(createLI({
+					 id:'j-li-item-2',
+					 clazz:'',
+					 val:(createNavImg({
+						 id:'j-img-item-2',
+						 img:'crush2.jpg'
+					 }))
+				 })).attr('style','padding:0px; ')
+				 .appendTo('#div-order-grid5');
+				 $(createATag({
+					 id:'',
+					 val:'구매하러가기'
+				 })).attr('style','color:white').appendTo('#j-li-item-2');
+				 $(createLI({
+					 id:'j-li-item-3',
+					 clazz:'',
+					 val:(createNavImg({
+						 id:'j-img-item-3',
+						 img:'crush3.jpg'
+					 }))
+				 })).attr('style','padding:0px; ')
+				 .appendTo('#div-order-grid5');
+				 $('#j-img-item-3').attr('style','height: 362.5px; margin-top: 2px;');				
+				 $(createATag({
+					 id:'',
+					 val:'구매하러가기'
+				 })).attr('style','color:white').appendTo('#j-li-item-3');
+				 $(createLI({
+					 id:'j-li-item-4',
+					 clazz:'',
+					 val:(createNavImg({
+						 id:'j-img-item-4',
+						 img:'crush4.jpg'
+					 }))
+				 })).attr('style','padding:0px; ')
+				 .appendTo('#div-order-grid5');
+				 $(createATag({
+					 id:'',
+					 val:'구매하러가기'
+				 })).attr('style','color:white').appendTo('#j-li-item-4');
+				 $(createLI({
+					 id:'j-li-item-5',
+					 clazz:'',
+					 val:(createNavImg({
+						 id:'j-img-item-5',
+						 img:'crush5.jpg'
+					 }))
+				 })).attr('style','padding:0px; ')
+				 .appendTo('#div-order-grid5');
+				 $(createATag({
+					 id:'',
+					 val:'구매하러가기'
+				 })).attr('style','color:white').appendTo('#j-li-item-5');
+				 $('#j-img-item-5').attr('style','height: 362.5px; width:327px;');
+				 $(createDiv({
+					 id:'j-nav-dropdown2',
+					 clazz:'dropdown'
+				 })).attr('style',' background: black;').appendTo('#container');			 
+				 $(createDiv({
+					 id:'j-div-nav-dropdown2'
+				 })).appendTo('#j-nav-dropdown2');
+			
+			
 				 
 				 $(createDiv({
 	    			 id : 'div-main',
@@ -613,7 +814,7 @@ app.main=(()=>{
 				})).attr('style','background:black; height:15%;')
 				.appendTo('#footer');
 				$(createImg({
-					img:'mainitme10.jpg'
+					img:'mainitem10.jpg'
 				})).appendTo('#j-div-footer2');
 				
 				$(createGridDiv4()).attr('style','margin: 0 auto;').appendTo('#j-div-footer1');
@@ -778,7 +979,7 @@ app.login=(()=>{
 		 $content = $('#content');
 		 context = $.context();
 		 image = $.image();
-	     view = $.javascript()+'/view.js';
+	     view = $.javascript()+'/app.js';
 	     setContentView();
 	     content();
 	 };
@@ -956,8 +1157,19 @@ app.login=(()=>{
    			 id:'a-find-store',
    			 val:'관리자'
    		 })).attr('style','color:white;font-size: 20px; padding:10px;')
-   		 .appendTo('#div-second');
+   		 .appendTo('#div-second')
+   		 .on('click',e=>{
+				e.preventDefault();
+				$.ajax({
+				url: context+"admin/login",
+				dataType: 'text',
+				contentType: 'application/json',
+				method: 'POST',
+				});
+				alert('작동함');
+			});
          });
+		 //*** 관리자 클릭시 admin폴더의 b_home으로 이동하게!
 		 
 	 };
 	 var order=x=>{

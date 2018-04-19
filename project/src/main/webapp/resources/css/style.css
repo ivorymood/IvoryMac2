@@ -51,6 +51,36 @@
   font-size: 15px;
 }
 
+.order-grid-container5 {
+  margin: 0 auto;	
+     width: 1500px;
+    height: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0;
+  padding: 0;
+}
+.order-grid-container5 > div {
+  text-align: center;
+  font-size: 15px;
+  margin-right:300px;
+}
+
+.order-grid-container6 {
+  margin: 0 auto;	
+     width: 1500px;
+    height: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0;
+  padding: 0;
+}
+.order-grid-container6 > div {
+  text-align: center;
+  font-size: 15px;
+}
+
+
 .grid-container-row {
   display: grid;
   grid-template-row: auto auto auto auto auto auto auto;
