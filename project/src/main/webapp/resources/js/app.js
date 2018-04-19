@@ -42,6 +42,9 @@ var createSpan=x=>{
     return '<span id="'+x.id+'" class="glyphicon '+x.clazz+'" aria-hidden="true"> &nbsp;'
     +x.val+'</span>'
 }
+var createNavSpan=x=>{
+    return '<span id="'+x.id+'" class="'+x.clazz+'" aria-hidden="true"></span>'
+}
 var createHTag=x=>{
     return '<h'+x.num+'>'+x.val+'</h'+x.num+'>';
 }
@@ -178,6 +181,53 @@ app.main=(()=>{
 	 };
 	 var setContentView=()=>{
 			 $.getScript(view,()=>{ 
+				 $(createDiv({
+	    			 id : 'div-main-nav',
+	    			 clazz : ''
+	    		 })).attr('style','height:60px;').appendTo($wrapper);
+				 $('#div-main-nav').append($(createDiv({
+					 id:'container',
+					 clazz:'container'
+				 })));
+				 $(createButton({
+					 id:'j-btn-nav-new-item',
+					 clazz:' btn-primary dropdown-toggle',
+					 val:'신제품'+(createNavSpan({
+						 id:'j-span-new-item',
+						 clazz:'caret'
+					 }))
+				 })).attr('data-toggle','dropdown-menu')
+				 .appendTo('#container');
+				 $(createUL({
+					 id:'j-ul-new-item',
+					 clazz:'dropdown'
+				 })).appendTo('#container');
+				 $(createLI({
+					 id:'j-li-1',
+					 clazz:'',
+					 val:(createATag({
+						 id:'',
+						 val:'HTML'
+					 }))
+				 })).appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-2',
+					 clazz:'',
+					 val:(createATag({
+						 id:'',
+						 val:'HTML'
+					 }))
+				 })).appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-3',
+					 clazz:'',
+					 val:(createATag({
+						 id:'',
+						 val:'HTML'
+					 }))
+				 })).appendTo('#j-ul-new-item');
+				 
+				 
 				 $(createDiv({
 	    			 id : 'div-main',
 	    			 clazz : ''
