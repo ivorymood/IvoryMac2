@@ -40,10 +40,10 @@ var createATagGrid=x=>{
 }
 var createSpan=x=>{
     return '<span id="'+x.id+'" class="glyphicon '+x.clazz+'" aria-hidden="true"> &nbsp;'
-    +x.val+'</span>'
+    +x.val+'</span>';
 }
 var createNavSpan=x=>{
-    return '<span id="'+x.id+'" class="'+x.clazz+'" aria-hidden="true"></span>'
+    return '<span id="'+x.id+'" class="'+x.clazz+'" aria-hidden="true"></span>';
 }
 var createHTag=x=>{
     return '<h'+x.num+'>'+x.val+'</h'+x.num+'>';
@@ -63,7 +63,7 @@ var createUL=(x)=>{
     return '<ul id="'+x.id+'" class="'+x.clazz+'"></ul>';
 }
 var createInput=x=>{
-    return '<input id="'+x.id+'" placeholder="'+x.val+'" type="'+x.type+'"/>'
+    return '<input id="'+x.id+'" placeholder="'+x.val+'" type="'+x.type+'"/>';
 }
 var createText=x=>{
     return '<h1 style="text-align: center;" id="'+x+'"></h1>';
@@ -113,7 +113,7 @@ var createGridDivRow=x=>{
 	  +'<div></div>'
 	  +'<div><a href="#">위시리스트 담기</a></div>'
 	  +'<div><a href="#">삭제</a></div>'
-	+'</div>'
+	+'</div>';
 }
 var createGridDivRow1=x=>{
 	return '<div class="grid-container-row1">'
@@ -121,7 +121,7 @@ var createGridDivRow1=x=>{
 	  +'<div>'+x.eval+'</div>'
 	  +'<div>'+x.weight+'</div>'
 	  +'<div>'+x.color+'</div>  '
-	+'</div>'
+	+'</div>';
 }
 var createGridDivRow2=x=>{
 	return '<div class="grid-container-row2">'
@@ -132,21 +132,21 @@ var createGridDivRow2=x=>{
 	  +'<div>'+x.val5+'</div>'
 	  +'<div>'+x.val6+'</div>'
 	  +'<div>'+x.val7+'</div>'
-	+'</div>'
+	+'</div>';
 }
 var createGridDivRowPrice=x=>{
 	return '<div class="create-GridDiv-RowPrice">'
 	  +'<div>'+x.prcie+'</div>'
 	  +'<div>'+x.sprcie+'</div>'
 	  +'<div>'+x.sale+'</div>'
-	+'</div>'
+	+'</div>';
 }
 
 var createImg=x=>{
 	return '<img src="'+$.image()+'/'+x.img+'" alt="Matte Lipstick" title="Matte Lipstick">';
 }
 var createOl=x=>{
-	return '<ol id="'+x.id+'" class="'+x.clazz+'"></ol>'
+	return '<ol id="'+x.id+'" class="'+x.clazz+'"></ol>';
 }
 var createLI=(x)=>{
     return '<ll id="'+x.id+'" class="'+x.clazz+'">'+x.val+'</ll>';
@@ -165,8 +165,7 @@ var createMainImg=()=>{
       +'<li data-target="#myCarousel" data-slide-to="0" class="active"></li>'
       +'<li data-target="#myCarousel" data-slide-to="1"></li>'
       +'<li data-target="#myCarousel" data-slide-to="2"></li>'
-    +'</ol>'
-;
+    +'</ol>';
 }
 
 app.main=(()=>{
@@ -176,7 +175,7 @@ app.main=(()=>{
 		 $content = $('#content');
 		 context = $.context();
 		 image = $.image();
-	     view = $.javascript()+'/app.js';
+	     view = $.javascript()+'/j_app.js';
 	     setContentView();
 	 };
 	 var setContentView=()=>{
@@ -845,7 +844,7 @@ app.login=(()=>{
 		 $content = $('#content');
 		 context = $.context();
 		 image = $.image();
-	     view = $.javascript()+'/app.js';
+	     view = $.javascript()+'/j_app.js';
 	     setContentView();
 	     content();
 	 };
