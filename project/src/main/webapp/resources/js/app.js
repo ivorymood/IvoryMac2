@@ -42,6 +42,9 @@ var createSpan=x=>{
     return '<span id="'+x.id+'" class="glyphicon '+x.clazz+'" aria-hidden="true"> &nbsp;'
     +x.val+'</span>'
 }
+var createNavSpan=x=>{
+    return '<span id="'+x.id+'" class="'+x.clazz+'" aria-hidden="true"></span>'
+}
 var createHTag=x=>{
     return '<h'+x.num+'>'+x.val+'</h'+x.num+'>';
 }
@@ -177,16 +180,80 @@ app.main=(()=>{
 	     setContentView();
 	 };
 	 var setContentView=()=>{
-			 $.getScript(view,()=>{
+			 $.getScript(view,()=>{ 
 				 $(createDiv({
-	    			 id : 'j-div-nav',
+	    			 id : 'div-main-nav',
 	    			 clazz : ''
-	    		 })).appendTo($wrapper);
+	    		 })).attr('style','height:60px;').appendTo($wrapper);
+				 $('#div-main-nav').append($(createDiv({
+					 id:'container',
+					 clazz:'container'
+				 })));
 				 $(createDiv({
-	    			 id : 'j-div-header',
-	    			 clazz : 'wrap-tnb-menu'
-	    		 })).attr('style','background:black; height:60px;')
-	    		 .appendTo('#j-div-nav');
+					 id:'j-nav-dropdown1',
+					 clazz:'dropdown'
+				 })).appendTo('#container');
+				 $(createButton({
+					 id:'j-btn-nav-new-item',
+					 clazz:' btn-primary dropdown-toggle',
+					 val:'신제품'+(createNavSpan({
+						 id:'j-span-new-item',
+						 clazz:'caret'
+					 }))
+				 })).attr('data-toggle','dropdown')
+				 .appendTo('#j-nav-dropdown1');
+				 $(createUL({
+					 id:'j-ul-new-item',
+					 clazz:'dropdown-menu'
+				 })).attr('style','width: 100%;').appendTo('#j-nav-dropdown1');
+				 
+				 $(createDiv({
+					 id:'j-div-item-1',
+					 clazz:''
+				 })).appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-item-1',
+					 clazz:'',
+					 val:(createATag({
+						 id:'j-a-item-1',
+						 val:'버시컬러 바니쉬'
+					 }))
+				 })).attr('style','padding:10px; ')
+				 .appendTo('#j-div-item-1');				 
+				 $(createLI({
+					 id:'j-li-item-2',
+					 clazz:'',
+					 val:(createATag({
+						 id:'j-a-item-2',
+						 val:'맥 걸즈'
+					 }))
+				 })).attr('style','padding:10px;').appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-item-3',
+					 clazz:'',
+					 val:(createATag({
+						 id:'j-a-item-3',
+						 val:'스로우 백스:립아이'
+					 }))
+				 })).attr('style','padding:10px;').appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-item-4',
+					 clazz:'',
+					 val:(createATag({
+						 id:'j-a-item-4',
+						 val:'맥 트랜드 포케스트'
+					 }))
+				 })).attr('style','padding:10px;').appendTo('#j-ul-new-item');
+				 $(createLI({
+					 id:'j-li-item-5',
+					 clazz:'',
+					 val:(createATag({
+						 id:'j-a-item-5',
+						 val:'리틀 맥'
+					 }))
+				 })).attr('style','padding:10px;').appendTo('#j-ul-new-item');
+				 
+				 
 				 
 				 $(createDiv({
 	    			 id : 'div-main',
@@ -613,7 +680,7 @@ app.main=(()=>{
 				})).attr('style','background:black; height:15%;')
 				.appendTo('#footer');
 				$(createImg({
-					img:'mainitme10.jpg'
+					img:'mainitem10.jpg'
 				})).appendTo('#j-div-footer2');
 				
 				$(createGridDiv4()).attr('style','margin: 0 auto;').appendTo('#j-div-footer1');
@@ -778,7 +845,7 @@ app.login=(()=>{
 		 $content = $('#content');
 		 context = $.context();
 		 image = $.image();
-	     view = $.javascript()+'/view.js';
+	     view = $.javascript()+'/app.js';
 	     setContentView();
 	     content();
 	 };
@@ -958,6 +1025,7 @@ app.login=(()=>{
    		 })).attr('style','color:white;font-size: 20px; padding:10px;')
    		 .appendTo('#div-second');
          });
+		 //*** 관리자 클릭시 admin폴더의 b_home으로 이동하게!
 		 
 	 };
 	 var order=x=>{

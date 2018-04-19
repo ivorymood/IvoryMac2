@@ -1,23 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html lang="en">   
 <head>
 	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
-	<script src="${path.js}/jquery-3.3.1.min.js"></script>
-	<script src="${path.js}/bootstrap.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+  
+/*  total  */ 
 	.div-custMana-frame {
 	  display: grid;
 	  grid-template-columns: auto auto;
+	  padding: 10px;
 	  grid-gap: 10px;
 	  background-color: #7b7b82;
-	  padding: 10px;
 	  height: 900px;
-	  width: 92%;
+	  width: 91%;
 	  margin: 0 auto;
-	  font-size: 20px;
+	  font-size: 17px;
 	}
 	.div-custMana-frame > div {
 	  background-color: rgb(222, 239, 239);
@@ -37,9 +43,10 @@
 	.div-custMana-left > div > button{
 		  width: 100px;
 		  height: 40px;
+		  font-size: 15px;
 	}
 	
-	
+/*  custMana  */	
 	.div-custMana-right{
 	  grid-template-row: auto auto auto auto auto;
 	  width : 1200px;
@@ -88,48 +95,11 @@
 		border: 1px solid black;	
 		text-align: center;
 	}
-	#div-custMana-page {
+	.b-div-custMana-page {
 		text-align: center;
 	}
-	.div-addItem-frame {
-	  display: grid;
-	  grid-template-columns: auto auto;
-	  grid-gap: 10px;
-	  background-color: #7b7b82;
-	  padding: 10px;
-	  height: 900px;
-	  width: 92%;
-	  margin: 0 auto;
-	  font-size: 20px;
-	}
-	.div-addItem-frame > div {
-	  background-color: rgb(222, 239, 239);
-	  border: 1px solid black;
-	 /*  text-align: center; */
-	  height: 98%;
-	}
-	.div-addItem-left{
-	  grid-template-row: auto auto auto;
-	  width : 210px;
-	  text-align: center;
-	}
-	.div-addItem-left > div{
-	 	 margin-top: 37px;
-	 	 font-size: 30px;
-	}
-	.div-addItem-left > div > button{
-		  width: 100px;
-		  height: 40px;
-	}
 	
-	
-	.div-addItem-right{
-	  grid-template-row: auto auto auto auto auto;
-	  width : 1200px;
-	}
-	.div-addItem-right > div{
-		  border: 1px solid black;
-	}
+/*  addItem  */		
 	.div-addItem-title1{
 		margin-left: 1px;
 		font-size: 18px;
@@ -140,14 +110,14 @@
 	}
 	.div-addItem-rightDetail {
 		 display: grid;
-	     grid-template-columns: auto auto;
+	     grid-template-columns: 1fr 4fr;
 	     grid-gap: 5px;
 		 background-color: #7b7b82;
 		 padding: 10px;
 	     height: 600px;
 	  	 width: 92%;
 		 margin: 0 auto;
-		 font-size: 20px;
+		 font-size: 18px;
 	}
 	.div-addItem-rightDetail > div {
 	  background-color: rgb(151, 199, 239);
@@ -155,80 +125,36 @@
 	 /*  text-align: center; */
 	  height: 99%;
 	}
-	
 	.div-addItem-rigDetLeft {
-		grid-template-row: auto auto auto auto auto auto auto auto auto auto;
-	    width : 210px;
+		width : 210px;
 		text-align: center;
 	}
 	.div-addItem-rigDetLeft > div {
 		  border: 1px solid black;	
 	}
 	.div-addItem-rigDetRight {
-		grid-template-row: auto auto auto auto auto auto auto auto auto auto;
-	    width : 870px;
-	  /*   text-align: center; */
+	    width : 870px; 
+	  text-align: center; 
 	}
 	.div-addItem-rigDetRight > div {
 		  border: 1px solid black;
 	}
-	#sel-addItem-choice {
+	.b-sel-addItem-choice {
 		margin-left: 95px;
 	}
-	#inp-addItem-itemName {
+	.b-inp-addItem-itemName {
 		margin-left: 75px;
 	}
 	.int-addItem-insert {
 		margin-left: 95px;
 	}
-	#btn-aadItem-insert {
+	.b-btn-addItem-insert {
 		width: 70px;
-		height: 30px;
-		margin-left: 1092px; 
-	}
-	.div-itemList-frame {
-	  display: grid;
-	  grid-template-columns: auto auto;
-	  grid-gap: 10px;
-	  background-color: #7b7b82;
-	  padding: 10px;
-	  height: 900px;
-	  width: 92%;
-	  margin: 0 auto;
-	  font-size: 20px;
-	}
-	.div-itemList-frame > div {
-	  background-color: rgb(222, 239, 239);
-	  border: 1px solid black;
-	 /*  text-align: center; */
-	  height: 98%;
-	}
-	.div-itemList-left{
-	  grid-template-row: auto auto auto;
-	  width : 210px;
-	  text-align: center;
-	}
-	.div-itemList-left > div{
-	 	 margin-top: 37px;
-	 	 font-size: 30px;
-	}
-	.div-itemList-left > div > button{
-		  width: 100px;
-		  height: 40px;
+	/* 	height: 25px; */
+		margin-left: 1080px; 
 	}
 	
-	.div-itemList-right{
-	  grid-template-row: auto auto auto auto auto;
-	  width : 1200px;
-	}
-	.div-itemList-right > div{
-		  border: 1px solid black;
-	}
-	.div-itemList-right > div > div > button {
-	  border: 1px solid black;
- 	  width: 70px;
-	  height: 30px;
-	}
+/*  itemList  */
 	.div-itemList-title1{
 		margin-left: 1px;
 		font-size: 18px;
@@ -237,35 +163,112 @@
 		margin-left: 1px;
 		font-size: 30px;
 	}
-	.div-itemList-search{
-		text-align: center;
-		margin-top: 30px;	
+	.div-itemList-total {
+		  display: grid;
+		  grid-template-row: auto auto auto;
+		  grid-gap: 10px;
+		  background-color: #deefef;
+		  padding: 10px;
 	}
-	.div-itemList-list{
-	    grid-template-row: auto auto auto auto auto;
-		width: 1100px;
-		height: 250px;
+	.div-itemList-total > div {
+	 /*  background-color: rgba(255, 255, 255, 0.8); */
+	  /* border: 1px solid black; */
+	  /* text-align: center; */
+	  font-size: 18px;
+	}
+	.div-itemList-up {
+	  display: grid;
+	  grid-template-row: auto auto;
+	  grid-gap: 5px;
+	  /* border: 1px solid black; */
+	  padding: 5px;
+	  background-color: #7b7b82;
+	}
+	.div-itemList-up > div{
+	  /* border: 1px solid black; */
+	  text-align: center;
+	  background-color: rgb(222, 239, 239);
+	}
+	.div-itemList-detailSearch{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 5px;
+		padding: 10px;
+		background-color: #7b7b82;
+		width: 100%;
+		margin: 0 auto;	
+	    /* border: 1px solid black; */
+		/* height: 80px; */
+	}
+	.div-itemList-detailSearch > div{
+		 background-color: rgb(222, 239, 239);
+ 		 /* border: 1px solid black;  */
+		 /*  text-align: center; */
+		  height: 98%;
+	}
+	.div-itemList-detail{
 		border: 1px solid black;
+	}
+	.div-itemList-display {
+		border: 1px solid black;
+	}
+    .b-btn-itemList-detSearClick {
+    	/* border: 1px solid black; */
+    	float: right;
+    }
+	.div-itemList-list {
+		display: grid;
+		grid-template-row: auto auto;
+		/* border: 1px solid black; */ 
 		text-align: center;
-		margin: 0 auto;
-		margin-top: 20px;
+	    width: 100%;
+	    padding: 5px;
+	  	grid-gap: 5px;
+	    background-color: #7b7b82;
+	   /*  heigh: 300px; */
+       /*  border-radius:15px; */
 	}
 	.div-itemList-list > div {
-		 border: 1px solid black;
-	}
-	.div-itemList-listIn{
+	  /* border: 1px solid black; */
+	  text-align: center;
+	  background-color: rgb(222, 239, 239);
+	  }
+	.div-itemList-listIn {
 		display: grid;
-		grid-template-columns: 5fr 3fr 3fr 3fr 3fr 4fr 4fr 3fr;
-		border: 1px solid black;
+	  	grid-template-columns: auto auto auto auto auto auto auto auto;
+		/* border: 1px solid black; */ 
 	}
-	.div-itemList-listIn > div {
-		border: 1px solid black;	
+	.di-itemList-listContent {
+		/* border: 1px solid black; */
+		height: 220px;
 	}
-	.div-itemList-detailSearch {
-		border: 1px solid black;	
-		text-align: center;
+	.div-itemList-btn {
+		/* border: 1px solid black; */
+		margin-left: 950px;
 	}
-	#div-itemList-page {
+	.div-itemList-addDay {
+		display: grid;
+	  	grid-template-columns: 3fr 0fr 4fr 1fr 0fr 4fr; 
+	  	border: 1px solid black;
+	}
+	.inp-itemList-glycal {
+	 	width: 160px; 
+	 	height: 29px;
+	} 
+	.inp-itemList-insItem{
+		height: 29px;
+		width: 180px;
+	}
+	.div-itemList-price{
+		display: grid;
+	  	grid-template-columns: 5fr 8fr 2fr 8fr; 
+	  	border: 1px solid black;
+	}
+	.inp-itemList-price {
+		width: 140px;
+		height: 27px;
+	}
+	.b-div-itemList-page {
 		text-align: center;
 	}
   </style>
@@ -276,32 +279,40 @@
 	  <div class="div-custMana-left">
 	  	 <div>관리자 페이지</div>
 	  	 <div>
-	  		<button id="button-custMana-custMana">회원 리스트</button>
+	  		<button id="b-button-custMana-custMana">회원 리스트</button>
 	  	 </div>
 	     <div>
-	    	  <button id="button-custMana-addItem">상품 등록</button>
+	    	  <button id="b-button-custMana-addItem">상품 등록</button>
 	     </div>
 	     <div>
-	    	  <button id="button-custMana-itemList">상품 리스트</button> 
+	    	  <button id="b-button-custMana-itemList">상품 리스트</button> 
 	     </div>
 	  </div>
 	  <div class="div-custMana-right"> 
+	     
+ 		 <section>
+      		<div id="content">
+         		<tiles:insertAttribute name="content"/>
+      		</div>
+   		 </section>
+	  
 	  </div>
    </div>
+   
 </body>
 
 	<script>
-		$('#button-custMana-custMana').on('click',function(){
+		$('#b-button-custMana-custMana').on('click',function(){
 			alert("회원 리스트 클릭");
 			location.href="${path.context}/admin/member";
-		});
-		$('#button-custMana-addItem').on('click',function(){
+		});  
+		$('#b-button-custMana-addItem').on('click',function(){
 			alert("상품 추가 클릭");
-			location.href="${path.context}/addItem";
+			location.href="${path.context}/admin/addItem";
 		});
-		$('#button-custMana-itemList').on('click',function(){
+		$('#b-button-custMana-itemList').on('click',function(){
 			alert("상품 리스트 클릭");
-			location.href="${path.context}/itemList"
+			location.href="${path.context}/admin/itemList";
 		}); 
 	</script>
 </html>
