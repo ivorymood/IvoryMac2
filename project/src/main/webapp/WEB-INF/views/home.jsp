@@ -14,7 +14,7 @@
     <script src="${context}/resources/js/router.js"></script>
 </head>
 <body>
-<div id="wrapper">	
+<div id="wrapper">	//ljl
 </div>
 <div id="content">	
 </div>
